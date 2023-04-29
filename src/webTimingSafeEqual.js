@@ -1,13 +1,13 @@
 let subtleCrypto;
 
 // Set subtleCrypto based on the environment (Node.js or browser)
-if (typeof window === "undefined") {
+if ("crypto" in global) {
+  // Edge environment
+  subtleCrypto = crypto.subtle;
+} else if (typeof window === "undefined") {
   // Node.js environment
   const crypto = require("crypto");
   subtleCrypto = crypto.webcrypto.subtle;
-} else if ("crypto" in global) {
-  // Edge environment
-  subtleCrypto = crypto.subtle;
 } else {
   // Browser environment
   subtleCrypto = window.crypto.subtle;
@@ -168,7 +168,7 @@ function validateAlgorithm(algorithm) {
   const allowedAlgorithms = ["SHA-1", "SHA-256", "SHA-384", "SHA-512"];
 
   if (!allowedAlgorithms.includes(algorithm)) {
-    throw new Error(`Invalid hash algorithm of value: '${algorithm}'`);
+    throw new Error(`Invalid hash algorithm: '${algorithm}'`);
   }
 }
 
@@ -187,7 +187,7 @@ function validateValueOrConvertToUint8Array(value) {
   ) {
     // Neither string nor Uint8Array
     throw new Error(
-      `Invalid comparison value ${value} is not of type String or Uint8Array`
+      `Invalid comparison value: ${value} of type ${typeof value} is not of type String or Uint8Array`
     );
   }
   if (!(value instanceof Uint8Array)) {
@@ -202,11 +202,3 @@ module.exports = {
   generateSecretKey,
   hmac,
 };
-
-crypto.timingSafeEqual('a','b') // fastest
-(async()=>{
-  await webTimingSafeEqual('a', 'b'); // 110 times slower
-
-  const secretKey = await generateSecretKey();
-  await webTimingSafeEqual('a', 'b', {secretKey}); // 65 times slower
-})()
