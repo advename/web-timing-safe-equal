@@ -1,6 +1,6 @@
 {
   "name": "@advena/web-timing-safe-equal",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A timing-safe comparison function utilizing the 'Double HMAC validation pattern' with webcrypto, designed to operate in Node.JS, Edge, and Browser environments.",
   "main": "./src/webTimingSafeEqual.js",
   "author": "advena",
