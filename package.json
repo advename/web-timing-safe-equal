@@ -1,0 +1,26 @@
+{
+  "name": "@advena/web-timing-safe-equal",
+  "version": "1.0.1",
+  "description": "A timing-safe comparison function utilizing the 'Double HMAC validation pattern' with webcrypto, designed to operate in Node.JS, Edge, and Browser environments.",
+  "main": "./src/webTimingSafeEqual.js",
+  "author": "advena",
+  "type": "commonjs",
+  "keywords": [
+    "web",
+    "browser",
+    "time",
+    "safe",
+    "comparison",
+    "attack",
+    "timingSafeEqual",
+    "Double",
+    "hmac",
+    "verification",
+    "edge"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/advename/web-timing-safe-equal.git"
+  }
+}
