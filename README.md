@@ -84,3 +84,17 @@ Returns a Promise that resolves to a hexadecimal digest of the HMAC computation.
 
 ## Security
 This library implements the "Double HMAC verification" pattern to provide a timing-safe comparison of strings. However, it is crucial to understand that the security of your application depends on various factors, and using this library alone does not guarantee your application is secure from timing attacks. Please consult a security expert if you have concerns about the security of your application.
+
+## Todo
+
+I've built this package for personal use. However, If it should ever gain traction then I would consider adding:
+- tests
+- CJS/ESM dual build
+- rewrite in typescript and provide types
+- ...?
+
+## Disclaimer
+
+Please note that I am not responsible for any errors or issues that may arise from using this package. By using this package, you acknowledge that you are using it at your own risk and that I cannot be held accountable for any problems or damages that may occur as a result of using this v. Please ensure that you have adequate backups and precautions in place before implementing or using this package in any production or critical environments.
+
+I myself have used it on one large Next.js client project and have not seen any issues yet.
