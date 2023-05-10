@@ -70,7 +70,7 @@ async function webTimingSafeEqual(left, right, options = {}) {
     ),
     hmac(
       secretKey,
-      leftUint8Array,
+      rightUint8Array,
       options?.hmacAlgorithm ? options.hmacAlgorithm : undefined
     ),
   ]);
