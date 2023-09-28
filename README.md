@@ -14,7 +14,7 @@ npm install @advena/web-timing-safe-equal
 ## Usage
 
 ```javascript
-const { webTimingSafeEqual } = require("web-timing-safe-equal");
+const { webTimingSafeEqual } = require("@advena/web-timing-safe-equal");
 
 const left = "my secret value";
 const right = "another secret value";
